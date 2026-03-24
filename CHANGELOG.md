@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/bengreenier/nrql-js/compare/nrql-v0.2.1...nrql-v0.2.2) (2026-03-24)
+
+
+### Bug Fixes
+
+* **ci:** pass github token to napi prepublish ([31a83f7](https://github.com/bengreenier/nrql-js/commit/31a83f761bf4d696f9597fa60af206c64da497d6))
+
 ## [0.2.1](https://github.com/bengreenier/nrql-js/compare/nrql-v0.2.0...nrql-v0.2.1) (2026-03-24)
 
 
