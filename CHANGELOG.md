@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/bengreenier/nrql-js/compare/nrql-v0.2.2...nrql-v0.3.0) (2026-03-24)
+
+
+### Features
+
+* **wasm:** add experimental wasm32-unknown-unknown build and publish path ([#4](https://github.com/bengreenier/nrql-js/issues/4)) ([54355af](https://github.com/bengreenier/nrql-js/commit/54355afc4a144a97a7a355afcf707036ebb88a8b))
+
 ## [0.2.2](https://github.com/bengreenier/nrql-js/compare/nrql-v0.2.1...nrql-v0.2.2) (2026-03-24)
 
 
