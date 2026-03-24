@@ -6,6 +6,9 @@
   "types": "index.d.ts",
   "files": [
     "index.js",
+    "nrql.js",
+    "nrql.d.ts",
+    "nrql-js.wasm",
     "index.d.ts",
     "README.md",
     "CHANGELOG.md",
@@ -50,9 +53,11 @@
   },
   "scripts": {
     "artifacts": "napi artifacts",
-    "build": "napi build --platform --release",
-    "build:debug": "napi build --platform",
-    "build:local": "napi build --release",
+    "build": "napi build --platform --release --js nrql.js --dts nrql.d.ts",
+    "build:wasm:unknown": "pnpm exec napi build --target wasm32-unknown-unknown --release --target-dir target || (echo \"napi build failed for wasm32-unknown-unknown, falling back to cargo artifact copy\" && cargo build --target wasm32-unknown-unknown --release --target-dir target && cp target/wasm32-unknown-unknown/release/nrql_js.wasm nrql-js.wasm)",
+    "build:debug": "napi build --platform --js nrql.js --dts nrql.d.ts",
+    "build:local": "napi build --release --dts nrql.d.ts",
+    "check:wasm:unknown": "cargo check --target wasm32-unknown-unknown",
     "prepublishOnly": "napi prepublish -t npm",
     "test": "node --test",
     "version": "napi version"
