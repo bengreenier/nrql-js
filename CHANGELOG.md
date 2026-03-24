@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/bengreenier/nrql-js/compare/nrql-v0.2.0...nrql-v0.2.1) (2026-03-24)
+
+
+### Bug Fixes
+
+* **docs:** update npm directory argument in README and CI workflow ([8d51b3f](https://github.com/bengreenier/nrql-js/commit/8d51b3fad0a0826bd7c1d0edacbfd85fc83d7d5d))
+
 ## [0.2.0](https://github.com/bengreenier/nrql-js/compare/nrql-v0.1.0...nrql-v0.2.0) (2026-03-24)
 
 

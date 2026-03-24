@@ -1,6 +1,6 @@
 {
   "name": "@nrql-js/nrql",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "NRQL parser Node.js bindings (NAPI-RS) for nom_nrql",
   "main": "index.js",
   "types": "index.d.ts",
