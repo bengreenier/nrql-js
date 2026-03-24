@@ -42,5 +42,22 @@ jobs:
           cache: 'pnpm'
       - uses: dtolnay/rust-toolchain@stable
       - run: pnpm install --frozen-lockfile
-      - run: pnpm exec napi build --platform --release
+      - run: pnpm run build
       - run: pnpm test
+
+  build-wasm-unknown:
+    name: wasm32-unknown-unknown build (experimental)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+      - uses: dtolnay/rust-toolchain@stable
+      - run: pnpm install --frozen-lockfile
+      - run: rustup target add wasm32-unknown-unknown
+      - run: pnpm run check:wasm:unknown
+      - run: pnpm run build:wasm:unknown
+      - run: ls -la nrql-js.wasm
