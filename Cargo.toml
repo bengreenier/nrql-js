@@ -8,7 +8,7 @@ publish = false
 crate-type = ["cdylib"]
 
 [dependencies]
-nom_nrql = "0.1.1"
+nom_nrql = "0.1.2"
 napi = { version = "3", default-features = false, features = ["napi4"] }
 napi-derive = "3"
 
