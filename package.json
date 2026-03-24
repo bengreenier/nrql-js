@@ -1,0 +1,63 @@
+{
+  "name": "@nrql-js/nrql",
+  "version": "0.1.0",
+  "description": "NRQL parser Node.js bindings (NAPI-RS) for nom_nrql",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "README.md",
+    "LICENSE-MIT",
+    "LICENSE-APACHE"
+  ],
+  "license": "MIT OR Apache-2.0",
+  "keywords": [
+    "nrql",
+    "newrelic",
+    "parser",
+    "napi-rs",
+    "native",
+    "query-language"
+  ],
+  "homepage": "https://github.com/bengreenier/nrql-js#readme",
+  "bugs": {
+    "url": "https://github.com/bengreenier/nrql-js/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bengreenier/nrql-js.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "napi": {
+    "binaryName": "nrql-js",
+    "targets": [
+      "x86_64-pc-windows-msvc",
+      "i686-pc-windows-msvc",
+      "x86_64-apple-darwin",
+      "aarch64-apple-darwin",
+      "x86_64-unknown-linux-gnu",
+      "aarch64-unknown-linux-gnu",
+      "armv7-unknown-linux-gnueabihf"
+    ]
+  },
+  "scripts": {
+    "artifacts": "napi artifacts",
+    "build": "napi build --platform --release",
+    "build:debug": "napi build --platform",
+    "build:local": "napi build --release",
+    "prepublishOnly": "napi prepublish -t npm",
+    "test": "node --test",
+    "version": "napi version"
+  },
+  "packageManager": "pnpm@9.15.4",
+  "devDependencies": {
+    "@napi-rs/cli": "^3.2.0"
+  }
+}
