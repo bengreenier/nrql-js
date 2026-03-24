@@ -82,7 +82,7 @@ jobs:
       - name: Layout optional platform packages
         run: |
           pnpm exec napi create-npm-dirs
-          pnpm exec napi artifacts --output-dir . --dist npm
+          pnpm exec napi artifacts --output-dir . --npm-dir npm
           pnpm exec napi prepublish -t npm
       - name: Publish to npm
         run: npm publish --access public --ignore-scripts

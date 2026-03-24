@@ -83,7 +83,7 @@ Fully local publish (you must supply all platform `nrql-js.*.node` files yoursel
 ```bash
 pnpm run build
 pnpm exec napi create-npm-dirs
-pnpm exec napi artifacts --output-dir . --dist npm
+pnpm exec napi artifacts --output-dir . --npm-dir npm
 pnpm exec napi prepublish -t npm
 npm publish --access public
 ```
