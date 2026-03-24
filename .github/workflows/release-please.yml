@@ -1,23 +1,34 @@
-# Tag a version (e.g. v0.1.0) and push to publish @nrql-js/nrql to npm.
-# Requires repository secret: NPM_TOKEN (automation access token for the npm scope).
+# Opens and updates Release PRs from conventional commits. When a release is
+# created in this run, we also build/publish npm here (no PAT required).
 
-name: Release
+name: Release Please
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - main
 
 permissions:
-  contents: read
-
-concurrency:
-  group: release-${{ github.ref }}
-  cancel-in-progress: false
+  contents: write
+  issues: write
+  pull-requests: write
 
 jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
   build-native:
     name: Build (${{ matrix.os }})
+    needs: [release-please]
+    if: ${{ needs.release-please.outputs.release_created == 'true' }}
     strategy:
       fail-fast: false
       matrix:
@@ -43,7 +54,8 @@ jobs:
 
   publish:
     name: Publish to npm
-    needs: [build-native]
+    needs: [release-please, build-native]
+    if: ${{ needs.release-please.outputs.release_created == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
