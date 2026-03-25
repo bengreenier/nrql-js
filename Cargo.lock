@@ -232,9 +232,9 @@ dependencies = [
 
 [[package]]
 name = "nom_nrql"
-version = "0.1.1"
+version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4febe5f0ed8b9ddfe7757e049c1e126b185115bb58c056afb5f7f2214bfd94d3"
+checksum = "c56ebf24383c57bce0a44194d86adf4c8e96ea85f3f8d5f236ce01108c740019"
 dependencies = [
  "nom",
  "serde",
